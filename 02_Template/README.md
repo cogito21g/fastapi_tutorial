@@ -1,4 +1,4 @@
-# Template
+# 02 Template
 
 ```python
 from fastapi.templating import Jinja2Templates

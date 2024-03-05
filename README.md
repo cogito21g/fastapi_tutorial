@@ -2,8 +2,8 @@
 
 ## Tutorial
 1. [Main Page](./01_main_page/)
-2. [Template](./02_Template/)
-3. [SignIn Page]()
+2. [Template](./02_template/)
+3. [Database(Sqlalchemy)](./03_database/)
 4. [Connect Database]()
 5. [Authentication]()
 6. [File Upload]()
@@ -22,4 +22,7 @@ conda activate fastapi
 pip install fastapi
 pip install uvicorn
 pip install jinja2
+pip install python-multipart
+pip install sqlalchemy
+pip install email-validator
 ```
