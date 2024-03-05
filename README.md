@@ -6,6 +6,7 @@
 3. [Database(Sqlalchemy)](./03_database/)
 4. [Single File Upload](./04_single_file_upload/)
 5. [Multi File Upload](./05_multi_file_upload/)
+6. [Video Streaming](./06_video_streaming/)
 
 ## Setting
 
