@@ -18,12 +18,12 @@ def index_post(request: Request):
     return {"message": "Post: Index"}
 
 @app.put("/")
-def index_post(request: Request):
-    return {"message": "Post: Index"}
+def index_put(request: Request):
+    return {"message": "Put: Index"}
 
 @app.delete("/")
-def index_post(request: Request):
-    return {"message": "Post: Index"}
+def index_delete(request: Request):
+    return {"message": "Delete: Index"}
 ```
 - @app.get:    path는 "/"이고 GET 요청시 처리
 - @app.post:   path는 "/"이고 POST 요청시 처리
