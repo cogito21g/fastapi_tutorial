@@ -1,4 +1,4 @@
-# 02 Template
+# 02 Templates
 
 ```python
 from fastapi.templating import Jinja2Templates
@@ -8,7 +8,7 @@ from fastapi.templating import Jinja2Templates
 ```python
 templates = Jinja2Templates(directory="templates")
 ```
-- Jinja2Templates: directory로 시작 폴더 위치 지정
+- Jinja2Templates: directory로 기준 폴더 지정. 해당 폴더에서 html 탐색
 
 ```python
 @app.get("/")

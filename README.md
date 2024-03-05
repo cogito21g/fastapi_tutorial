@@ -2,7 +2,7 @@
 
 ## Tutorial
 1. [Main Page](./01_main_page/)
-2. [Template](./02_template/)
+2. [Templates](./02_templates/)
 3. [Database(Sqlalchemy)](./03_database/)
 4. [Single File Upload](./04_single_file_upload/)
 5. [Multi File Upload](./05_multi_file_upload/)
