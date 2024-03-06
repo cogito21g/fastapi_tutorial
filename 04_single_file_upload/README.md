@@ -7,7 +7,7 @@ from fastapi import FastAPI, Request, File, UploadFile
 - 패키지 가져오기
 - os:                 경로 설정을 위함.
 - fastapi.File:       html의 form을 처리하기 위함. Form을 상속 
-- fastapi.UploadFile: html의 form을 처리하기 위함.
+- fastapi.UploadFile: html의 form을 처리하기 위함. starlette의 UploadFile 상속
 
 ```python
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -32,6 +32,7 @@ def index_post(request: Request, file: bytes=File(...)):
 - File: html의 form에서 넘어온 데이터 처리
   - form의 enctype="application/x-www-form-urlencoded"일 경우 파일명
   - form의 enctype="multipart/form-data"일 경우 Binary IO
+- bytes 형태의 데이터는 메모리에 저장됨.
 
 ```python
 @app.post("/")
@@ -45,7 +46,8 @@ async def index_post(request: Request, file: UploadFile):
 ```
 - UploadFile:  html의 form에서 넘어온 데이터 처리.(enctype="multipart/form-data")
   - filename:  파일 이름
-  - file.file: 파일 Binary IO
+  - file.file: 파일 Binary IO. spooledTemporaryFile.
+- 최대 크기 제한까지는 메모리에 저장후 디스크에 저장.
 
 ```html
 <!-- <form action="/" method="post" enctype="application/x-www-form-urlencoded"> -->

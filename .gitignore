@@ -1,5 +1,10 @@
 **/.vscode/
 **/.DS_Store
 **/__pycache__/
-**/06_video_upload/
-temp.txt
+./temp.txt
+**/06_single_file_download
+**/07_multi_file_download
+**/08_video_streaming_http
+**/09_video_streaming_websocket
+**/10_realtime_data_streaming/
+**/11_webrtc
