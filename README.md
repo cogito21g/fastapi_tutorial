@@ -12,6 +12,7 @@
 9. [Video Streaming(WebSocket)](./09_video_streaming_websocket/)
 10. [Realtime Data Streaming](./10_realtime_data_streaming/)
 11. [WebRTC](./11_webrtc/)
+12. [HTTP Method](./12_http_method/)
 
 ## Setting
 

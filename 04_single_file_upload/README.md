@@ -38,6 +38,11 @@ def index_post(request: Request, file: bytes=File(...)):
 @app.post("/")
 async def index_post(request: Request, file: UploadFile):
     msg = file.filename
+    real = 0
+    for chunk in file.file:
+        real = real + len(chunk)
+        if real > 2 * 1024 * 1024:
+            return templates.TemplateResponse(request=request, name="index.html", context={"message": "Too Much Size"})
     data = file.file.read()
     with open(os.path.join(upload_dir, file.filename), "wb") as f:
         f.write(data)
@@ -47,7 +52,9 @@ async def index_post(request: Request, file: UploadFile):
 - UploadFile:  html의 form에서 넘어온 데이터 처리.(enctype="multipart/form-data")
   - filename:  파일 이름
   - file.file: 파일 Binary IO. spooledTemporaryFile.
+- file.file:   데이터를 chunk 단위로 읽음.
 - 최대 크기 제한까지는 메모리에 저장후 디스크에 저장.
+- 2 * 1024 * 1024는 2MB
 
 ```html
 <!-- <form action="/" method="post" enctype="application/x-www-form-urlencoded"> -->

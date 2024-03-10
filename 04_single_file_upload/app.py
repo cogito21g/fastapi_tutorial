@@ -26,6 +26,11 @@ def index_get(request: Request):
 @app.post("/")
 async def index_post(request: Request, file: UploadFile):
     msg = file.filename
+    real = 0
+    for chunk in file.file:
+        real = real + len(chunk)
+        if real > 2 * 1024 * 1024:
+            return templates.TemplateResponse(request=request, name="index.html", context={"message": "Too Much Size"})
     data = file.file.read()
     with open(os.path.join(upload_dir, file.filename), "wb") as f:
         f.write(data)
